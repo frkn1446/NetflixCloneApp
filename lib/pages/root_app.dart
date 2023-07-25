@@ -3,6 +3,8 @@ import 'package:fl_netflix_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 import 'coming_soon_page.dart';
+import 'download_page.dart';
+import 'search_page.dart';
 
 class RootApp extends StatefulWidget {
   @override
@@ -27,18 +29,8 @@ class _RootAppState extends State<RootApp> {
       children: [
         HomePage(),
         ComingSoonPage(),
-        Center(
-          child: Text(
-            "Search",
-            style: TextStyle(fontSize: 20, color: Colors.white),
-          ),
-        ),
-        Center(
-          child: Text(
-            "Downloads",
-            style: TextStyle(fontSize: 20, color: Colors.white),
-          ),
-        )
+        SearchPage(),
+        DownloadsPage(),
       ],
     );
   }
