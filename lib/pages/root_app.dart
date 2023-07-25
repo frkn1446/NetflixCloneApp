@@ -2,6 +2,8 @@ import 'package:fl_netflix_app/json/root_app_json.dart';
 import 'package:fl_netflix_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
+import 'coming_soon_page.dart';
+
 class RootApp extends StatefulWidget {
   @override
   _RootAppState createState() => _RootAppState();
@@ -24,12 +26,7 @@ class _RootAppState extends State<RootApp> {
       index: activeTab,
       children: [
         HomePage(),
-        Center(
-          child: Text(
-            "Coming Soon",
-            style: TextStyle(fontSize: 20, color: Colors.white),
-          ),
-        ),
+        ComingSoonPage(),
         Center(
           child: Text(
             "Search",
