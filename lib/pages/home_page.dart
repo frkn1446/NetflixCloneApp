@@ -1,4 +1,5 @@
 import 'package:fl_netflix_app/json/home_json.dart';
+import 'package:fl_netflix_app/pages/video_detail_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -99,33 +100,43 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              right: 13, left: 8, top: 2, bottom: 2),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.play_arrow,
-                                color: Colors.black,
-                                size: 30,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                "Play",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => VideoDetailPage(
+                                        videoUrl: "assets/videos/video_1.mp4",
+                                      )));
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                                right: 13, left: 8, top: 2, bottom: 2),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.play_arrow,
                                   color: Colors.black,
+                                  size: 30,
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  "Play",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -177,15 +188,28 @@ class _HomePageState extends State<HomePage> {
                             children: List.generate(
                               mylist.length,
                               (index) {
-                                return Container(
-                                  margin: EdgeInsets.only(right: 8),
-                                  width: 110,
-                                  height: 160,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) => VideoDetailPage(
+                                          videoUrl: "assets/videos/video_1.mp4",
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    margin: EdgeInsets.only(right: 8),
+                                    width: 110,
+                                    height: 160,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        fit: BoxFit.cover,
                                         image: AssetImage(mylist[index]['img']),
-                                        fit: BoxFit.cover),
-                                    borderRadius: BorderRadius.circular(6),
+                                      ),
+                                      borderRadius: BorderRadius.circular(6),
+                                    ),
                                   ),
                                 );
                               },
@@ -218,16 +242,28 @@ class _HomePageState extends State<HomePage> {
                             children: List.generate(
                               popularList.length,
                               (index) {
-                                return Container(
-                                  margin: EdgeInsets.only(right: 8),
-                                  width: 110,
-                                  height: 160,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            popularList[index]['img']),
-                                        fit: BoxFit.cover),
-                                    borderRadius: BorderRadius.circular(6),
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) => VideoDetailPage(
+                                          videoUrl: "assets/videos/video_2.mp4",
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    margin: EdgeInsets.only(right: 8),
+                                    width: 110,
+                                    height: 160,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              popularList[index]['img']),
+                                          fit: BoxFit.cover),
+                                      borderRadius: BorderRadius.circular(6),
+                                    ),
                                   ),
                                 );
                               },
@@ -260,16 +296,28 @@ class _HomePageState extends State<HomePage> {
                             children: List.generate(
                               trendingList.length,
                               (index) {
-                                return Container(
-                                  margin: EdgeInsets.only(right: 8),
-                                  width: 110,
-                                  height: 160,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            trendingList[index]['img']),
-                                        fit: BoxFit.cover),
-                                    borderRadius: BorderRadius.circular(6),
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) => VideoDetailPage(
+                                          videoUrl: "assets/videos/video_1.mp4",
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    margin: EdgeInsets.only(right: 8),
+                                    width: 110,
+                                    height: 160,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              trendingList[index]['img']),
+                                          fit: BoxFit.cover),
+                                      borderRadius: BorderRadius.circular(6),
+                                    ),
                                   ),
                                 );
                               },
@@ -302,16 +350,28 @@ class _HomePageState extends State<HomePage> {
                             children: List.generate(
                               originalList.length,
                               (index) {
-                                return Container(
-                                  margin: EdgeInsets.only(right: 8),
-                                  width: 165,
-                                  height: 300,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            originalList[index]['img']),
-                                        fit: BoxFit.cover),
-                                    borderRadius: BorderRadius.circular(6),
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) => VideoDetailPage(
+                                          videoUrl: "assets/videos/video_1.mp4",
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    margin: EdgeInsets.only(right: 8),
+                                    width: 165,
+                                    height: 300,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              originalList[index]['img']),
+                                          fit: BoxFit.cover),
+                                      borderRadius: BorderRadius.circular(6),
+                                    ),
                                   ),
                                 );
                               },
@@ -344,16 +404,28 @@ class _HomePageState extends State<HomePage> {
                             children: List.generate(
                               animeList.length,
                               (index) {
-                                return Container(
-                                  margin: EdgeInsets.only(right: 8),
-                                  width: 110,
-                                  height: 160,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image:
-                                            AssetImage(animeList[index]['img']),
-                                        fit: BoxFit.cover),
-                                    borderRadius: BorderRadius.circular(6),
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) => VideoDetailPage(
+                                          videoUrl: "assets/videos/video_1.mp4",
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    margin: EdgeInsets.only(right: 8),
+                                    width: 110,
+                                    height: 160,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              animeList[index]['img']),
+                                          fit: BoxFit.cover),
+                                      borderRadius: BorderRadius.circular(6),
+                                    ),
                                   ),
                                 );
                               },
