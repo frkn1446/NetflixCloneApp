@@ -176,7 +176,7 @@ class _VideoDetailPageState extends State<VideoDetailPage> {
                   ),
                 ),
           Container(
-            height: size.height - 320,
+            height: size.height - 350,
             child: SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
@@ -184,7 +184,7 @@ class _VideoDetailPageState extends State<VideoDetailPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Age of Samuria: Battle for Japan",
+                      "Age of Samurai: Battle for Japan",
                       style: TextStyle(
                           height: 1.4,
                           fontSize: 28,
